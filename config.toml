@@ -2,6 +2,8 @@ baseURL = 'https://dialectapp.org'
 languageCode = 'en'
 title = 'Dialect'
 
+disableKinds = ['taxonomy', 'term']
+
 [menus]
 [[menus.main]]
     name = 'About'

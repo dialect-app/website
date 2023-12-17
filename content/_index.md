@@ -1,6 +1,6 @@
 ---
-title: Home
-hero_desc: Translation application for Linux desktop and mobile
+title: Dialect
+description: Translation application for Linux desktop and mobile
 buttons:
 - label: Download on Flathub
   image: https://dl.flathub.org/assets/badges/flathub-badge-en.svg
