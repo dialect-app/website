@@ -1,0 +1,23 @@
+baseURL = 'https://dialectapp.org'
+languageCode = 'en'
+title = 'Dialect'
+
+[menus]
+[[menus.main]]
+    name = 'About'
+    url = '/#about'
+    weight = 10
+[[menus.main]]
+    name = 'Hosted Services'
+    url = '/#hosted-services'
+    weight = 20
+[[menus.main]]
+    name = 'Donate'
+    url = '/#donate'
+    weight = 30
+[[menus.main]]
+    name = 'Github'
+    url = 'https://github.com/dialect-app'
+
+[markup.goldmark.renderer]
+unsafe= true

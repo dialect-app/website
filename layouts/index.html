@@ -1,0 +1,129 @@
+{{ define "main" }}
+{{/* Render index hero */}}
+<section class="section section-page hero">
+    <div class="container">
+        <h2 class="hero-text" id="heroText">{{ index .Site.Data.hero 0 }}</h2>
+
+        <picture class="screenshot">
+            <source srcset="dialect-dark.png" media="(prefers-color-scheme: dark)">
+            <img src="dialect.png" alt="Dialect Window">
+        </picture>
+
+        <h3 class="hero-desc">{{ .Params.hero_desc}}</h3>
+    </div>
+</section>
+
+{{/* Render index buttons */}}
+{{ with .Params.buttons }}
+<section class="section hero-actions">
+    <div class="container">
+        {{ range . }}
+        <div class="action-group">
+            <a href="{{ .link }}">
+                {{ if .image }}<img src="{{ .image }}" alt="{{ .label }}">
+                {{ else }}{{ .label }}{{ end }}
+            </a>
+
+            {{ $info_link := .info_link }}
+            {{ with .info_label }}
+            <span class="info-text">
+                {{ if $info_link }}<a href="{{ $info_link }}">{{ . }}</a>{{ else }}{{ . }}{{ end }}
+            </span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+{{/* Render index sections */}}
+{{ with .Site.GetPage "/sections" }}
+{{ $resources := .Resources }}
+    {{ range .Resources.ByType "page" }}
+    {{ $id := .Title | relURL | anchorize }}
+    <section class="section section-page {{ $id }}" id="{{ $id }}">
+        <div class="container">
+            <h2 class="title">{{ .Title }}</h2>
+
+            {{ with .Content }}
+            <div class="content">
+                {{ . }}
+            </div>
+            {{ end }}
+
+            {{ with .Params.services }}
+            <div class="grid services">
+                {{ range . }}
+                <a class="col-1-2" href="https://{{ .address }}">
+                    <div class="service-card">
+                        {{ with $resources.GetMatch (printf "*/%s" .icon) }}
+                        <img class="service-icon" src="{{ .RelPermalink }}" aria-hidden="true">
+                        {{ end }}
+                        <h3 class="service-name">{{ .title }}</h3>
+                        <span class="service-desc">{{ .desc }}</span>
+                        <span class="service-address">{{ .address }}</span>
+                    </div>
+                </a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+{{ end }}
+
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const heroText = document.getElementById("heroText");
+        const values = [
+            {{ range .Site.Data.hero }}"{{ . }}",{{ end }}
+        ];
+        
+        let firstIteration = true;
+        let texts = values.slice(0); // Copy text values
+
+        async function randomText() {
+            if (texts.length < 1)
+                texts = values.slice(0);
+
+            let index = Math.floor(Math.random() * texts.length);
+
+            if (firstIteration) { // Always start with english text
+                index = 0;
+                firstIteration = false;
+            }
+
+            const item = texts.splice(index, 1)[0];
+
+            await changeHeroText(item);
+
+            setTimeout(randomText, 3000);
+        }
+
+        function changeHeroText(text) {
+            heroText.textContent = ''; // Clear
+
+            return new Promise((resolve, reject) => {
+                let i = 0;
+
+                function typeText() {
+                    if (text.length > i) {
+                        heroText.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeText, 50);
+                    } else {
+                        resolve();
+                    }
+                }
+
+                typeText();
+            });
+        }
+
+        randomText();
+    });
+</script>
+{{ end }}

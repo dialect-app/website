@@ -1,0 +1,17 @@
+.footer {
+    text-align: center;
+
+    .container {
+        align-items: center;
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    .circle img {
+        width: 200px;
+    }
+}

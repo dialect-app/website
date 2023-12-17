@@ -1,0 +1,22 @@
+<header class="section header">
+    <div class="container">
+        <a class="logo" href="{{ .Site.BaseURL }}">
+            <svg aria-label="{{ .Site.Title }}" class="icon" width="48" height="48"><use xlink:href="/img/icons.svg#dialect"></use></svg>
+            <h1 class="site-title">{{ .Site.Title }}</h1>
+        </a>
+
+        <nav class="menu services">
+            <input class="menu-toggle" type="checkbox" id="menuToggle">
+            <label class="menu-icon" for="menuToggle">
+                <svg aria-label="Menu" class="icon" width="32" height="32"><use xlink:href="/img/icons.svg#menu"></use></svg>
+            </label>
+            <ul>
+                {{- range site.Menus.main }}
+                <li>
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+                {{- end }}
+            </ul>
+        </nav>
+    </div>
+</header>

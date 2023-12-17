@@ -1,0 +1,56 @@
+
+@import '_vars', '_fonts', '_reset';
+
+// Basic common styles
+:root {
+    --accent-color: #1a5fb4;
+    --base-bg: #{$light1};
+    --base-color: #{$dark5};
+    --purple-bg: #{lighten($purple1, 10%)};
+    --blue-bg: #{lighten($blue1, 10%)};
+    --card-bg: #{transparentize($dark5, .85)};
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+        --accent-color: #99c1f1;
+        --base-bg: #{$dark4};
+        --base-color: #{$light2};
+        --purple-bg: #{darken($purple5, 10%)};
+        --blue-bg: #{darken($blue5, 10%)};
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--base-bg);
+    color: var(--base-color);
+    font-family: "Cantarell var", sans-serif;    
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+}
+
+a {
+    color: currentColor;
+}
+
+// Common elements
+@import 'elements';
+
+// Site header and footer
+@import 'header', 'footer';
+
+// Site home
+@import 'home';

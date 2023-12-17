@@ -1,0 +1,54 @@
+
+.header {
+    background-color: darken($green5, 10%);
+    color: white;
+    padding: 12px 0;
+
+    .container {
+        align-items: center;
+        display: flex;
+    }
+
+    .logo {
+        align-items: center;
+        display: grid;
+        gap: 12px;
+        grid-template-areas: "icon name";
+        grid-template-columns: 48px auto;
+        text-decoration: none;
+
+        .icon {
+            grid-area: icon;
+        }
+        .site-title {
+            font-size: 2em;
+            font-weight: 900;
+            grid-area: name;
+        }
+    }
+
+    .services.menu {
+        flex: 1;
+
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: end;
+        }
+
+        ul {
+            justify-content: end;
+            @media (max-width: 768px) {
+                background: rgba(#000000, 0.75);
+                flex-direction: column;
+                right: 5%;
+                padding: 24px;
+                position: absolute;
+                top: 72px;
+            }
+        }
+
+        a {
+            color: white;
+        }
+    }
+}

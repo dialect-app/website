@@ -1,0 +1,123 @@
+
+/* Hero section */
+.hero {
+    background-image: radial-gradient($green2, $green5);
+    color: white;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 80vh;
+        padding: 96px 0;
+    }
+
+    .hero-text  {
+        font-size: 2.6em;
+        @media (max-width: 768px) {
+            font-size: 2em;
+        }
+    }
+
+    .hero-desc {
+        font-size: 1.6em;
+        font-weight: 700;
+    }
+
+    .screenshot {        
+        img {
+            display: block;
+            margin: auto;
+            @media (max-width: 768px) {
+                margin: 24px auto;
+            }
+        }
+    }
+}
+
+.hero-actions {
+    position: relative;
+    top: -40px;
+
+    .container {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    img {
+        width: 240px;
+    }
+
+    .action-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+
+        .info-text {
+            color: var(--base-color);
+            font-size: .8em;
+            opacity: .4;
+        }
+    }
+}
+
+/* About */
+.about {
+    padding-top: 0;
+}
+
+/* Hosted Services */
+.hosted-services {
+    background-color: var(--purple-bg);
+
+    .services {
+        margin-top: 24px;
+    }
+
+    /* Card links */
+    a {
+        text-decoration: none;
+        transition: all 0.35s cubic-bezier(0.17, 0.89, 0.32, 1.28);
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.service-card {
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 2em;
+    text-align: center;
+
+    .service-icon {
+        height: 64px;
+        width: 64px;
+    }
+
+    .service-name {
+        font-size: 2em;
+    }
+
+    .service-address {
+        border-radius: 6px;
+        background-color: var(--card-bg);
+        padding: .2em .6em;
+    }
+}
+
+/* Donate */
+.donate {
+    background-color: var(--blue-bg);
+}

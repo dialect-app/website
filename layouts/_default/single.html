@@ -1,0 +1,12 @@
+{{ define "main" }}
+{{ $id := .Title | relURL | anchorize }}
+<section class="section section-page {{ $id }}">
+    <div class="container">
+        <h2 class="title">{{ .Title }}</h2>
+
+        <div class="content">
+            {{ .Content }}
+        </div>
+    </div>
+</section>
+{{ end }}
