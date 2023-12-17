@@ -5,6 +5,8 @@
         <h2 class="hero-text" id="heroText">{{ index .Site.Data.hero 0 }}</h2>
 
         <picture class="screenshot">
+            <source srcset="dialect-mobile-dark.png" media="(max-width: 480px) and (prefers-color-scheme: dark)">
+            <source srcset="dialect-mobile.png" media="(max-width: 480px)">
             <source srcset="dialect-dark.png" media="(prefers-color-scheme: dark)">
             <img src="dialect.png" alt="Dialect Window">
         </picture>

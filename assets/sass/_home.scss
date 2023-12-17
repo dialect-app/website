@@ -6,11 +6,7 @@
     text-align: center;
 
     @media (max-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 80vh;
-        padding: 96px 0;
+        padding: 48px 0 72px 0;
     }
 
     .hero-text  {
