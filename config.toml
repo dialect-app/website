@@ -20,6 +20,9 @@ disableKinds = ['taxonomy', 'term']
 [[menus.main]]
     name = 'Github'
     url = 'https://github.com/dialect-app'
+[[menus.footer]]
+    name = 'Website Stats'
+    url = 'https://analytics.odka.org/dialectapp.org'
 
 [markup.goldmark.renderer]
 unsafe= true
