@@ -18,11 +18,17 @@ disableKinds = ['taxonomy', 'term']
     url = '/#donate'
     weight = 30
 [[menus.main]]
-    name = 'Github'
+    name = 'Code'
     url = 'https://github.com/dialect-app'
+
 [[menus.footer]]
     name = 'Website Stats'
     url = 'https://analytics.odka.org/dialectapp.org'
+    weight = 10
+[[menus.footer]]
+    name = 'Services Status'
+    url = 'https://status.dialectapp.org/'
+    weight = 20
 
 [markup.goldmark.renderer]
 unsafe= true

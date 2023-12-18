@@ -13,6 +13,10 @@
     .menu {
         margin-bottom: 1em;
 
+        ul {
+            gap: 12px;
+        }
+
         @media (max-width: 768px) {
             ul {
                 align-items: center;
