@@ -3,7 +3,7 @@
 
 ## Development
 
-The only dependency to build the website is the [Hugo](https://gohugo.io/) static site generator extension edition.
+The only dependency to build the website is the [Hugo](https://gohugo.io/) static site generator extended edition.
 
 See the [installation instructions](https://gohugo.io/installation/).
 
