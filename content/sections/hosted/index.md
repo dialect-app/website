@@ -8,6 +8,11 @@ services:
   address: lt.dialectapp.org
   icon: libretranslate.svg
 
+- title: SimplyTranslate
+  desc: A privacy friendly frontend to multiple Translation Engines.
+  address: st.dialectapp.org
+  icon: simplytranslate.png
+
 - title: Lingva Translate
   desc: Alternative front-end for Google Translate.
   address: lingva.dialectapp.org
