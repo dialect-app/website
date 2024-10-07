@@ -3,7 +3,7 @@ title: Dialect
 description: Translation application for Linux desktop and mobile
 buttons:
 - label: Download on Flathub
-  image: https://dl.flathub.org/assets/badges/flathub-badge-en.svg
+  image: https://flathub.org/api/badge?svg&locale=en
   link: https://flathub.org/apps/app.drey.Dialect  
   info_label: Other Installation Methods
   info_link: https://github.com/dialect-app/dialect/#installation
