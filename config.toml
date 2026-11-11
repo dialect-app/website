@@ -23,7 +23,7 @@ disableKinds = ['taxonomy', 'term']
 
 [[menus.footer]]
     name = 'Website Stats'
-    url = 'https://analytics.odka.org/dialectapp.org'
+    url = 'https://mulksar.odka.org/share/Ti1fhgQ3C4SafiD8'
     weight = 10
 [[menus.footer]]
     name = 'Services Status'
